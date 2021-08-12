@@ -121,18 +121,21 @@ socket_close($socket);
 
 /*
 
+
+Link donde pase el codigo python a php de la creacion de un  tcp syn:
+https://gist.github.com/fffaraz/57144833c6ef8bd9d453
+
 #instalacion WSL2: https://terminaldelinux.com/terminal/wsl/instalacion-configuracion-wsl/#convertir-distro-wsl1-a-wsl2
 
 
 //http://www.tecnodelinglesalcastellano.com/2011/07/encapsulado-y-formato-de-datagramas-ip.html
-//https://gist.github.com/fffaraz/57144833c6ef8bd9d453#file-tcp_syn-py
+
 
 ejemplos:
 https://www.redeszone.net/tutoriales/seguridad/hping3-manipular-paquetes-tcp-ip-ataques/
 https://www.um.es/docencia/barzana/DIVULGACION/INFORMATICA/Introduccion_a_TCPIP.pdf
 
-Creacion paquetes tcp con socket RAW
-https://gist.github.com/fffaraz/57144833c6ef8bd9d453
+
 
 creacion de paquete
 https://inc0x0.com/tcp-ip-packets-introduction/tcp-ip-packets-4-creating-a-syn-port-scanner/
