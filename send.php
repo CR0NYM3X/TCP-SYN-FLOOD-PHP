@@ -1,6 +1,27 @@
 <?php
 # TCP SYN FLOOR PHP
 
+
+// Convierte a 16bit el numero que ingreses siempre y cuando se a menor de 16bits, que sea menor que 32767 decimal si se ingresa un numero que sea de 16 bits se invertira el procesos y se convertira el numero a 8 bits
+function htons($num)
+{
+    $bin=decbin($num);
+  //  if (strlen($bin)>=16)
+    //    return $num;
+
+    $restante= 16- strlen($bin);
+    $cerosFaltantes='';
+
+    for ($i=1; $i <= $restante ; $i++) { 
+        $cerosFaltantes.='0';
+    }
+
+    $bin = $cerosFaltantes.$bin;
+    return bindec(substr($bin, 8).substr($bin, 0,8));
+
+}
+
+
 function checksum($msg)
 {
 	$s= 0;
@@ -17,6 +38,9 @@ function checksum($msg)
 
 	return $s;
 }
+
+
+
 
 
 
@@ -72,7 +96,7 @@ $rst = 0;
 $psh = 0;
 $ack = 0;
 $urg = 0; 
-$window = 53270;   //socket.htons (5840) ; Esta funcion Converte un valor a 16 bits, (5840)=[ 10110 11010000 ] se cuenta de derecha a izquierda 8 bits el restante que es 10110 se se agregan 0 al lado izquierdo hasta completar 8 bits y queda asi: 00010110 ahora estos 8 bits se mueven a la derecha y quedaria asi [11010000 00010110] y si lo convertimos adecimal el resultado es este:  53270
+$window =   htons(5840);   //socket.htons (5840) ; Esta funcion Converte un valor a 16 bits, (5840)=[ 10110 11010000 ] se cuenta de derecha a izquierda 8 bits el restante que es 10110 se se agregan 0 al lado izquierdo hasta completar 8 bits y queda asi: 00010110 ahora estos 8 bits se mueven a la derecha y quedaria asi [11010000 00010110] y si lo convertimos adecimal el resultado es este:  53270
 $check = 0; // 0x0
 $urg_ptr = 0; // 0x0
  
