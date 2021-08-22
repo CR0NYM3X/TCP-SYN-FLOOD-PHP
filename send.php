@@ -151,6 +151,7 @@ https://gist.github.com/fffaraz/57144833c6ef8bd9d453
 
 #instalacion WSL2: https://terminaldelinux.com/terminal/wsl/instalacion-configuracion-wsl/#convertir-distro-wsl1-a-wsl2
 
+#https://inc0x0.com/tcp-ip-packets-introduction/tcp-ip-packets-4-creating-a-syn-port-scanner/
 
 //http://www.tecnodelinglesalcastellano.com/2011/07/encapsulado-y-formato-de-datagramas-ip.html
 
